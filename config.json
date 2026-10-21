@@ -1,0 +1,82 @@
+{
+  "username": "joacoAviles",
+  "name": "JOACO",
+  "tagline": ["CARS", "PEOPLE", "PROGRESS"],
+  "motto": ["DALE", "NO MÁS"],
+  "loop": ["BUILD", "AUTOMATE", "EXPLORE", "REPEAT"],
+  "intro": "Curioso por naturaleza. Construyendo por necesidad.",
+  "intro_sub": "Tecnología, automatización, infraestructura y productos digitales. De una idea a un sistema funcionando.",
+  "location": { "label": "SANTIAGO, CHILE", "lat": "33.4489° S", "lon": "70.6693° W" },
+
+  "links": [
+    { "label": "aviarockets.com", "url": "https://aviarockets.com" },
+    { "label": "hola@aviarockets.com", "url": "mailto:hola@aviarockets.com" }
+  ],
+
+  "route": [
+    { "label": "IDEAS", "url": "" },
+    { "label": "BUILD", "url": "" },
+    { "label": "AUTOMATE", "url": "" },
+    { "label": "DEPLOY", "url": "" },
+    { "label": "NEXT PROJECT", "url": "" }
+  ],
+  "route_caption": "UNA VUELTA MÁS",
+
+  "stack": [
+    { "name": "Python", "icon": "python", "lang": "Python" },
+    { "name": "JavaScript", "icon": "javascript", "lang": "JavaScript" },
+    { "name": "TypeScript", "icon": "typescript", "lang": "TypeScript" },
+    { "name": "Bash", "icon": "gnubash", "lang": "Shell" },
+    { "name": "Linux", "icon": "linux" },
+    { "name": "Docker", "icon": "docker", "lang": "Dockerfile" },
+    { "name": "Proxmox", "icon": "proxmox" },
+    { "name": "GitHub Actions", "icon": "githubactions" },
+    { "name": "PostgreSQL", "icon": "postgresql", "lang": "PLpgSQL" },
+    { "name": "Supabase", "icon": "supabase" },
+    { "name": "ESPHome", "icon": "esphome" },
+    { "name": "APIs", "icon": "", "highlight": true }
+  ],
+
+  "projects": [
+    {
+      "index": "01",
+      "title": "Avia Rockets",
+      "repo": "joacoAviles/avia-rockets",
+      "url": "https://aviarockets.com",
+      "description": "Productos, automatizaciones y servicios digitales.",
+      "image": "assets/photos/avia-rockets.jpg"
+    },
+    {
+      "index": "02",
+      "title": "Infrastructure Lab",
+      "repo": "joacoAviles/infrastructure-lab",
+      "description": "Proxmox, Docker, runners y orquestación.",
+      "image": "assets/photos/infrastructure-lab.jpg"
+    },
+    {
+      "index": "03",
+      "title": "Legal Automation",
+      "repo": "joacoAviles/legal-automation",
+      "description": "Procesamiento y seguimiento de causas.",
+      "image": "assets/photos/legal-automation.jpg"
+    },
+    {
+      "index": "04",
+      "title": "Open Experiments",
+      "repo": "joacoAviles/open-experiments",
+      "description": "Herramientas, integraciones y prototipos.",
+      "image": "assets/photos/open-experiments.jpg"
+    }
+  ],
+
+  "footer": {
+    "list": ["CARS", "PEOPLE", "PROGRESS", "DALE NO MÁS"],
+    "shout": ["CONSTRUIR", "APRENDER", "MEJORAR", "REPETIR."],
+    "stamp": ["SIEMPRE", "EN", "CONSTRUCCIÓN"]
+  },
+
+  "photos": {
+    "header": "assets/photos/header.jpg",
+    "footer": "assets/photos/footer.jpg"
+  }
+}
