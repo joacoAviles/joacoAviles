@@ -1,82 +1,194 @@
 {
   "username": "joacoAviles",
   "name": "JOACO",
-  "tagline": ["CARS", "PEOPLE", "PROGRESS"],
-  "motto": ["DALE", "NO MÁS"],
-  "loop": ["BUILD", "AUTOMATE", "EXPLORE", "REPEAT"],
+  "tagline": [
+    "CARS",
+    "PEOPLE",
+    "PROGRESS"
+  ],
+  "motto": [
+    "DALE",
+    "NO MÁS"
+  ],
+  "loop": [
+    "BUILD",
+    "AUTOMATE",
+    "EXPLORE",
+    "REPEAT"
+  ],
   "intro": "Curioso por naturaleza. Construyendo por necesidad.",
   "intro_sub": "Tecnología, automatización, infraestructura y productos digitales. De una idea a un sistema funcionando.",
-  "location": { "label": "SANTIAGO, CHILE", "lat": "33.4489° S", "lon": "70.6693° W" },
-
+  "location": {
+    "label": "SANTIAGO, CHILE",
+    "lat": "33.4489° S",
+    "lon": "70.6693° W"
+  },
   "links": [
-    { "label": "aviarockets.com", "url": "https://aviarockets.com" },
-    { "label": "hola@aviarockets.com", "url": "mailto:hola@aviarockets.com" }
+    {
+      "label": "aviarockets.com",
+      "url": "https://aviarockets.com"
+    },
+    {
+      "label": "hola@aviarockets.com",
+      "url": "mailto:hola@aviarockets.com"
+    }
   ],
-
   "route": [
-    { "label": "IDEAS", "url": "" },
-    { "label": "BUILD", "url": "" },
-    { "label": "AUTOMATE", "url": "" },
-    { "label": "DEPLOY", "url": "" },
-    { "label": "NEXT PROJECT", "url": "" }
+    {
+      "label": "IDEAS",
+      "url": ""
+    },
+    {
+      "label": "BUILD",
+      "url": ""
+    },
+    {
+      "label": "AUTOMATE",
+      "url": ""
+    },
+    {
+      "label": "DEPLOY",
+      "url": ""
+    },
+    {
+      "label": "NEXT PROJECT",
+      "url": ""
+    }
   ],
   "route_caption": "UNA VUELTA MÁS",
-
   "stack": [
-    { "name": "Python", "icon": "python", "lang": "Python" },
-    { "name": "JavaScript", "icon": "javascript", "lang": "JavaScript" },
-    { "name": "TypeScript", "icon": "typescript", "lang": "TypeScript" },
-    { "name": "Bash", "icon": "gnubash", "lang": "Shell" },
-    { "name": "Linux", "icon": "linux" },
-    { "name": "Docker", "icon": "docker", "lang": "Dockerfile" },
-    { "name": "Proxmox", "icon": "proxmox" },
-    { "name": "GitHub Actions", "icon": "githubactions" },
-    { "name": "PostgreSQL", "icon": "postgresql", "lang": "PLpgSQL" },
-    { "name": "Supabase", "icon": "supabase" },
-    { "name": "ESPHome", "icon": "esphome" },
-    { "name": "APIs", "icon": "", "highlight": true }
+    {
+      "name": "Python",
+      "icon": "python",
+      "lang": "Python"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "javascript",
+      "lang": "JavaScript"
+    },
+    {
+      "name": "TypeScript",
+      "icon": "typescript",
+      "lang": "TypeScript"
+    },
+    {
+      "name": "Bash",
+      "icon": "gnubash",
+      "lang": "Shell"
+    },
+    {
+      "name": "Linux",
+      "icon": "linux"
+    },
+    {
+      "name": "Docker",
+      "icon": "docker",
+      "lang": "Dockerfile"
+    },
+    {
+      "name": "Proxmox",
+      "icon": "proxmox"
+    },
+    {
+      "name": "GitHub Actions",
+      "icon": "githubactions"
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "postgresql",
+      "lang": "PLpgSQL"
+    },
+    {
+      "name": "Supabase",
+      "icon": "supabase"
+    },
+    {
+      "name": "ESPHome",
+      "icon": "esphome"
+    },
+    {
+      "name": "APIs",
+      "icon": "",
+      "highlight": true
+    }
   ],
-
   "projects": [
     {
       "index": "01",
-      "title": "Avia Rockets",
-      "repo": "joacoAviles/avia-rockets",
-      "url": "https://aviarockets.com",
+      "kicker": "AVIA ROCKETS SPA",
+      "title": "Aviarockets.cl",
+      "url": "https://aviarockets.cl",
       "description": "Productos, automatizaciones y servicios digitales.",
-      "image": "assets/photos/avia-rockets.jpg"
+      "image": "assets/photos/aviarockets.jpg"
     },
     {
       "index": "02",
-      "title": "Infrastructure Lab",
-      "repo": "joacoAviles/infrastructure-lab",
-      "description": "Proxmox, Docker, runners y orquestación.",
-      "image": "assets/photos/infrastructure-lab.jpg"
-    },
-    {
-      "index": "03",
-      "title": "Legal Automation",
-      "repo": "joacoAviles/legal-automation",
-      "description": "Procesamiento y seguimiento de causas.",
-      "image": "assets/photos/legal-automation.jpg"
-    },
-    {
-      "index": "04",
-      "title": "Open Experiments",
-      "repo": "joacoAviles/open-experiments",
-      "description": "Herramientas, integraciones y prototipos.",
-      "image": "assets/photos/open-experiments.jpg"
+      "kicker": "MARCA PERSONAL",
+      "title": "Joaquin.aviles.cl",
+      "url": "https://joaquin.aviles.cl",
+      "description": "Marca personal: autos, personas y progreso.",
+      "image": "assets/photos/marca-personal.jpg"
     }
   ],
-
   "footer": {
-    "list": ["CARS", "PEOPLE", "PROGRESS", "DALE NO MÁS"],
-    "shout": ["CONSTRUIR", "APRENDER", "MEJORAR", "REPETIR."],
-    "stamp": ["SIEMPRE", "EN", "CONSTRUCCIÓN"]
+    "list": [
+      "CARS",
+      "PEOPLE",
+      "PROGRESS",
+      "DALE NO MÁS"
+    ],
+    "shout": [
+      "CONSTRUIR",
+      "APRENDER",
+      "MEJORAR",
+      "REPETIR."
+    ],
+    "stamp": [
+      "SIEMPRE",
+      "EN",
+      "CONSTRUCCIÓN"
+    ]
   },
-
   "photos": {
     "header": "assets/photos/header.jpg",
     "footer": "assets/photos/footer.jpg"
-  }
+  },
+  "socials_title": [
+    "SOCIAL",
+    "@joacoavia"
+  ],
+  "socials": [
+    {
+      "name": "YouTube",
+      "icon": "youtube",
+      "handle": "@JoacoAvia-Acelerados",
+      "tag": "ACELERADOS",
+      "url": "https://www.youtube.com/@JoacoAvia-Acelerados"
+    },
+    {
+      "name": "Instagram",
+      "icon": "instagram",
+      "handle": "@joacoavia",
+      "url": "https://www.instagram.com/joacoavia/"
+    },
+    {
+      "name": "TikTok",
+      "icon": "tiktok",
+      "handle": "@joacoavia",
+      "url": "https://www.tiktok.com/@joacoavia"
+    },
+    {
+      "name": "Facebook",
+      "icon": "facebook",
+      "handle": "/JoacoAvia",
+      "url": "https://www.facebook.com/JoacoAvia"
+    },
+    {
+      "name": "LinkedIn",
+      "icon": "linkedin",
+      "handle": "/in/joaquinavilesse",
+      "url": "https://www.linkedin.com/in/joaquinavilesse/"
+    }
+  ]
 }

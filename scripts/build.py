@@ -656,7 +656,7 @@ def build_card(cfg, p, repo, idx, demo=False):
         pts = [(30, 140), (90 + rnd.randint(-20, 20), 110), (150, 120 + rnd.randint(-20, 20)), (210, 80), (270 + rnd.randint(-15, 15), 70)]
         body.append(f'<path class="draw" d="{smooth(pts)}" pathLength="1" fill="none" stroke="{Y}" stroke-width="2" stroke-linecap="round"/>')
         body.append(f'<circle cx="{pts[-1][0]}" cy="{pts[-1][1]}" r="4" fill="{Y}"/><circle class="pulse" cx="{pts[-1][0]}" cy="{pts[-1][1]}" r="6" fill="none" stroke="{Y}"/>')
-        body.append(T(30, 36, f"PROJECT / {num}", "m", 9, MUTED, 3))
+        body.append(T(30, 36, p.get("kicker") or f"PROJECT / {num}", "m", 9, MUTED, 3))
     body.append("</g>")
     body.append(f'<path d="M{W-42} 40l14-14M{W-38} 26h10v10" fill="none" stroke="#fff" stroke-width="2"/>')
 
@@ -686,6 +686,31 @@ def build_card(cfg, p, repo, idx, demo=False):
     css = ("@keyframes draw{0%{stroke-dashoffset:1}50%,100%{stroke-dashoffset:0}}"
            ".draw{stroke-dasharray:1;animation:draw 6s ease-in-out infinite alternate}")
     return svg(W, H, "".join(body), ["d", "m", "s", "sb"], css, p["title"], defs)
+
+
+def build_social(s, i):
+    W, H = 200, 200
+    body, defs = [], ""
+    defs += f'<clipPath id="sc"><rect x="1" y="1" width="{W-2}" height="{H-2}" rx="12"/></clipPath>'
+    defs += f'<linearGradient id="sf" x1="0" x2="0" y1="0" y2="1"><stop offset=".2" stop-color="{PANEL}" stop-opacity="0"/><stop offset=".75" stop-color="{PANEL}"/></linearGradient>'
+    body.append(f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="12" fill="{PANEL}" stroke="{LINE}"/>')
+    body.append(f'<g clip-path="url(#sc)"><g transform="translate(-{i*60},0)">{topo("card", 0.11, 0.22, 1.0, 480, 200)}</g>'
+                f'<rect width="{W}" height="{H}" fill="url(#sf)"/></g>')
+    body.append(T(20, 32, f"{i+1:02d}", "m", 9, DIM, 3))
+    body.append(f'<path d="M{W-34} 34l12-12M{W-31} 22h9v9" fill="none" stroke="#fff" stroke-width="1.8"/>')
+    icon = ICONS.get(s.get("icon", ""))
+    if icon:
+        body.append(f'<g class="rise" style="animation-delay:{0.1 + i*0.12:.2f}s"><path transform="translate(20,62) scale(1.75)" d="{icon}" fill="{Y}"/></g>')
+    body.append(T(20, 140, s["name"], "sb", 19, TXT))
+    handle = s["handle"]
+    hs = 10.5
+    while text_w(handle, "m", hs) > W - 40 and hs > 7.5:
+        hs -= 0.5
+    body.append(T(20, 162, handle, "m", hs, MUTED))
+    body.append(f'<rect x="20" y="178" width="22" height="3.5" fill="{Y}"/>')
+    if s.get("tag"):
+        body.append(T(W - 20, 182, s["tag"], "mb", 8, Y, 2.4, "end"))
+    return svg(W, H, "".join(body), ["m", "mb", "sb"], "", f'{s["name"]} {handle}', defs)
 
 
 def build_footer(cfg):
@@ -745,7 +770,7 @@ def build_readme(cfg, data):
     L.append(f'<p align="center"><img src="{g}/stats.svg" width="100%" alt="GitHub stats"></p>')
     L.append(f'<p align="center"><img src="{g}/panel.svg" width="100%" alt="Tech stack y contribuciones"></p>')
     L.append("")
-    L.append(f'<a href="https://github.com/{u}?tab=repositories&sort=stargazers"><img src="{g}/projects-title.svg" width="100%" alt="Featured projects"></a>')
+    L.append(f'<a href="{esc(cfg["projects"][0].get("url") or f"https://github.com/{u}")}"><img src="{g}/projects-title.svg" width="100%" alt="Featured projects"></a>')
     L.append("")
     cards = []
     for i, p in enumerate(cfg["projects"], 1):
@@ -755,6 +780,14 @@ def build_readme(cfg, data):
     for i in range(0, len(cards), 2):
         L.append('<p align="center">' + "\n".join(cards[i:i + 2]) + "</p>")
     L.append("")
+    if cfg.get("socials"):
+        st = cfg.get("socials_title", ["SOCIAL", ""])
+        L.append(f'<img src="{g}/socials-title.svg" width="100%" alt="Social">')
+        L.append("")
+        L.append('<p align="center">' + "\n".join(
+            f'<a href="{esc(sc["url"])}"><img src="{g}/social-{i:02d}.svg" width="19%" alt="{esc(sc["name"])} {esc(sc["handle"])}"></a>'
+            for i, sc in enumerate(cfg["socials"], 1)) + "</p>")
+        L.append("")
     L.append(f'<p align="center"><img src="{g}/footer.svg" width="100%" alt="{esc(" ".join(cfg["footer"]["shout"]))}"></p>')
     if cfg.get("links"):
         L.append("")
@@ -780,11 +813,16 @@ def main():
         "route.svg": build_route(cfg, data),
         "stats.svg": build_stats(cfg, data),
         "panel.svg": build_panel(cfg, data),
-        "projects-title.svg": build_section("FEATURED PROJECTS", "Most stars"),
+        "projects-title.svg": build_section("FEATURED PROJECTS", "Live sites"),
         "footer.svg": build_footer(cfg),
     }
     for i, p in enumerate(cfg["projects"], 1):
         files[f"project-{i:02d}.svg"] = build_card(cfg, p, data["projects"].get(p.get("repo")), i, data.get("demo"))
+    if cfg.get("socials"):
+        st = cfg.get("socials_title", ["SOCIAL", ""])
+        files["socials-title.svg"] = build_section(st[0], st[1])
+        for i, sc in enumerate(cfg["socials"], 1):
+            files[f"social-{i:02d}.svg"] = build_social(sc, i - 1)
     for name, content in files.items():
         with open(os.path.join(gen, name), "w", encoding="utf-8") as fh:
             fh.write(content)
