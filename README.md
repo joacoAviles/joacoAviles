@@ -24,4 +24,4 @@
 
 <p align="center"><img src="assets/generated/footer.svg" width="100%" alt="CONSTRUIR APRENDER MEJORAR REPETIR."></p>
 
-<p align="center"><sub><a href="https://aviarockets.cl">aviarockets.cL</a> &nbsp;·&nbsp; <a href="mailto:contacto@aviarockets.cL">contacto@aviarockets.cl</a></sub></p>
+<p align="center"><sub><a href="https://aviarockets.com">aviarockets.com</a> &nbsp;·&nbsp; <a href="mailto:hola@aviarockets.com">hola@aviarockets.com</a></sub></p>
