@@ -12,9 +12,9 @@
 <a href="https://github.com/joacoAviles?tab=repositories&sort=stargazers"><img src="assets/generated/projects-title.svg" width="100%" alt="Featured projects"></a>
 
 <p align="center"><a href="https://aviarockets.com"><img src="assets/generated/project-01.svg" width="49%" alt="Avia Rockets"></a>
-<a href="https://github.com/joacoAviles/infrastructure-lab"><img src="assets/generated/project-02.svg" width="49%" alt="Infrastructure Lab"></a></p>
-<p align="center"><a href="https://github.com/joacoAviles/legal-automation"><img src="assets/generated/project-03.svg" width="49%" alt="Legal Automation"></a>
-<a href="https://github.com/joacoAviles/open-experiments"><img src="assets/generated/project-04.svg" width="49%" alt="Open Experiments"></a></p>
+<a href="https://github.com/joacoAviles"><img src="assets/generated/project-02.svg" width="49%" alt="Infrastructure Lab"></a></p>
+<p align="center"><a href="https://github.com/joacoAviles"><img src="assets/generated/project-03.svg" width="49%" alt="Legal Automation"></a>
+<a href="https://github.com/joacoAviles"><img src="assets/generated/project-04.svg" width="49%" alt="Open Experiments"></a></p>
 
 <p align="center"><img src="assets/generated/footer.svg" width="100%" alt="CONSTRUIR APRENDER MEJORAR REPETIR."></p>
 
