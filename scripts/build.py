@@ -22,7 +22,7 @@ FONT_DIR = os.path.join(ROOT, "assets", "fonts")
 DATA = os.path.join(ROOT, "scripts", "data")
 
 # ─── paleta ────────────────────────────────────────────────────────────────
-Y = "#F4C430"        # amarillo JOACO
+Y = "#FDCE28"        # amarillo JOACO (Avia-Brands › brands/joaco-avia)
 BG = "#0A0A0A"
 PANEL = "#0F0F0F"
 LINE = "#242424"
@@ -572,8 +572,8 @@ def build_panel(cfg, data):
         if x + cw > LW - 22:
             x, y = 22, y + 36
         stroke = Y if hl else "#333"
-        fill = "rgba(244,196,48,.10)" if hl else "#151515"
-        tcol = "#F7DB82" if hl else "#D6D6D6"
+        fill = "rgba(253,206,40,.10)" if hl else "#151515"
+        tcol = "#FEE27E" if hl else "#D6D6D6"
         g = f'<rect x="{x}" y="{y}" width="{cw:.1f}" height="27" rx="13.5" fill="{fill}" stroke="{stroke}"/>'
         tx = x + 13
         if icon:
